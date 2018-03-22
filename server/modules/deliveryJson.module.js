@@ -11,4 +11,6 @@ for(let i = 0; i < deliveries.length; i++) {
 
 
 
-module.exports = deliveryInfo;
+module.exports = {
+    deliveries,
+};

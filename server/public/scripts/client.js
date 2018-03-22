@@ -5,6 +5,15 @@ myApp.controller("DeliveryController", ['$http', function ($http) {
     
     let self = this;
 
-    
+    self.getDeliveries = function () {
+        $http.get('/delivery')
+        .then((response) => {
+            console.log('get response', response.data);
+        })
+        .catch((error) => {
+            console.log('error on get', error);
+        })
+    }
+    self.getDeliveries();
 
 }]);
