@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Swapi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ANGULAR -->
+
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-route.min.js" charset="utf-8"></script>
+
+    <!-- ANGULAR MATERIAL -->
+
+    <link href="vendors/angular-material.min.css" rel="stylesheet" type="text/css">
+    <script src="vendors/angular-animate.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-aria.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-messages.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-material.min.js" charset="utf-8"></script>
+
+    <!-- ClIENT -->
+
+    <script src="scripts/client.js"></script>
+    <script src="scripts/controllers/favorites.controller.js"></script>
+    <script src="scripts/controllers/search.controller.js"></script>
+    <script src="scripts/services/search.service.js"></script>
+    <link rel="stylesheet" media="screen" href="styles/styles.css" />
+
+</head>
+<body ng-app="myApp">
+    <!-- insert our nav template -->
+    <nav ng-include="'/views/templates/nav.html'"></nav>
+    
+    <main ng-view>
+</body>
+</html>
