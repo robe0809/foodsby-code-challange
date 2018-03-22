@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Swapi</title>
+    <title>Foodsby Code Challange (Front End)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- ANGULAR -->
@@ -23,16 +23,13 @@
     <!-- ClIENT -->
 
     <script src="scripts/client.js"></script>
-    <script src="scripts/controllers/favorites.controller.js"></script>
-    <script src="scripts/controllers/search.controller.js"></script>
-    <script src="scripts/services/search.service.js"></script>
     <link rel="stylesheet" media="screen" href="styles/styles.css" />
 
 </head>
-<body ng-app="myApp">
-    <!-- insert our nav template -->
-    <nav ng-include="'/views/templates/nav.html'"></nav>
-    
-    <main ng-view>
-</body>
+    <body ng-app="myApp">
+        <div ng-controller="DeliveryController as vm">
+            <h1>Delivery Schedule</h1>
+            
+        </div>
+    </body>
 </html>

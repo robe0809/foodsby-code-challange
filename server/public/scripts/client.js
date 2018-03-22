@@ -1,19 +1,10 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial']);
+const myApp = angular.module('myApp', ['ngMaterial']);
 
-// app configuration
-myApp.config(function($routeProvider) {
-    console.log('config loaded');
-    // define our client side routes
-    $routeProvider
-        .when('', {
-            templateUrl: '/views/.html',
-            controller: 'Controller as vm'
-        })
-        .when('', {
-            templateUrl: '/views/.html',
-            controller: 'Controller as vm'
-        })
-        .otherwise(
-            { redirectTo: '' }
-        );
-});
+myApp.controller("DeliveryController", ['$http', function ($http) {
+    console.log('controller loaded');
+    
+    let self = this;
+
+    
+
+}]);
