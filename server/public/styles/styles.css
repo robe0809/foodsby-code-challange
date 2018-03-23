@@ -1,0 +1,47 @@
+html {
+    background-color: lightgrey;
+}
+/******** Delivery Container ********/
+.deliveryContainer {
+    height: auto;
+    width: 60%;
+    margin: 50px auto;
+    border: 2px solid black;
+    border-radius: 2px;
+    padding: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.deliveryHeader {
+    text-align: center;
+    color: red;
+}
+/******** Days ********/
+.dayContainer {
+    display: flex;
+    justify-content: center;
+}
+.md-button:focus {
+    color: red;
+    text-decoration: underline;
+}
+/******** Restaurant Styles ********/
+.soldOut {
+    text-align: center;
+}
+.orderInfo {
+    width: 60%;
+}
+
+.restaurantBtn{
+    width: 100%;
+    color: white;;
+    background-color: red;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.orderTimes {
+    font-size: x-large;
+    text-align: left;
+}
+.card {
+    border-bottom: 3px solid red;
+}

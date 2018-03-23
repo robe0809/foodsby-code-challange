@@ -228,14 +228,6 @@
           "isOrderPlaced": false
         }
       ]
-    },
-    {
-        "day": "Saturday",
-        "deliveries": []
-    },
-    {
-        "day": "Sunday",
-        "deliveries": []
     }
   ]
 }

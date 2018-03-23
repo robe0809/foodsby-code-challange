@@ -1,16 +1,19 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+
+// required delivery info in from the JSON file located in the Modules folder. 
 const deliveryInfo = require('./modules/deliveryJson.module');
-// const DeliveryRouter = require('./routes/delivery.router.js');
 
 /** ---------- MIDDLEWARE ---------- **/
 app.use(express.static('server/public/'));
 app.use(bodyParser.json()); // needed for angular requests
 
 /** ---------- EXPRESS ROUTES ---------- **/
+
 app.get('/delivery', (req, res) => {
-    console.log('deliveryInfo', deliveryInfo.deliveries);
+    // sends deliveries to client.js
+    res.send(deliveryInfo.deliveries);
 });
 
 

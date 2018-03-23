@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,10 +26,55 @@
     <link rel="stylesheet" media="screen" href="styles/styles.css" />
 
 </head>
-    <body ng-app="myApp">
-        <div ng-controller="DeliveryController as vm">
-            <h1>Delivery Schedule</h1>
-            
-        </div>
-    </body>
+
+<body ng-app="myApp" class="deliveryContainer">
+    <div ng-controller="DeliveryController as vm" ng-cloak>
+
+        <h1 class="deliveryHeader">Delivery Schedule</h1>
+
+        <!-- ng-repeat through allDeliveries array to get buttons for each day -->
+        <section class="dayContainer">
+            <div ng-repeat="days in vm.allDeliveries">
+                <md-button class="md-raised dayBtn" ng-click="vm.deliverySchedule(days.day, vm.allDeliveries)">
+                    {{days.day}}
+                </md-button>
+            </div>
+        </section>
+
+        <!-- ng-repeat through deliveriesPerDay to get the restaurants and their information -->
+        <section class="restaurantContainer">
+            <!-- card to hold each restaurants information -->
+            <md-card ng-repeat="info in vm.deliveriesPerDay" class="card">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{info.restaurantName}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content layout="row" layout-align="space-between">
+                    <img class="md-media-xl card-media" ng-src="{{info.logoUrl}}">
+                    <md-card-actions layout="column" layout-align="space-between center" class="orderInfo">
+                        <div class="md-icon-button" ng-hide="info.soldOut===true">
+                            <p class="orderTimes" layout="row" layout-align="space-between">
+                                <label>Order By: </label>&nbsp {{info.cutoff}} AM</p>
+                            <p class="orderTimes" layout="row" layout-align="space-between">
+                                <label>Delivery Time: </label>&nbsp {{info.dropoff}} AM</p>
+                            <md-button class="restaurantBtn">Select Restaurant</md-button>
+                        </div>
+                        <div class="md-icon-button" ng-if="info.sellingOut===true" ng-hide="info.soldOut===true">
+                            <p>Hurry! Only 5 meals left.</p>
+                        </div>
+                        <div class="md-icon-button soldOut" ng-show="info.soldOut===true && info.sellingOut === true">
+                            <h1>Sold Out!</h1>
+                            <p>This Restaurant has hit maximum order capacity,</p>
+                            <p>which is established to ensure quality.</p>
+                        </div>
+                    </md-card-actions>
+                </md-card-content>
+            </md-card>
+
+        </section>
+
+    </div>
+</body>
+
 </html>
