@@ -8,6 +8,7 @@ myApp.controller("DeliveryController", ['$http', function ($http) {
     self.allDeliveries;
     self.deliveriesPerDay;
 
+    // getting current day in order to enter page and display the current days orders. 
     self.date = new Date();
     self.weekday = new Array(7);
     self.weekday[0] = "Sunday";
@@ -19,34 +20,31 @@ myApp.controller("DeliveryController", ['$http', function ($http) {
     self.weekday[6] = "Saturday";
 
     self.currentDay = self.weekday[self.date.getDay()];
-    
+
     self.getDeliveries = function () {
         $http.get('/delivery')
             .then((response) => {
                 console.log('get response', response.data);
-                self.allDeliveries = response.data;
+                self.allDeliveries = response.data;   
                 self.deliverySchedule(self.currentDay, self.allDeliveries)
             })
             .catch((error) => {
                 console.log('error on get', error);
             })
     }
-    
+
     self.getDeliveries();
 
-    // loops through the Response from the JSON file which gives us access to days and delivery details 
+    // loops through the Response from the JSON file which gives us access to days and delivery details. 
     self.deliverySchedule = function (day, allDeliveries) {
         for (let i = 0; i < allDeliveries.length; i++) {
-            // whatever todays date is it will display the corresponding deliveries.
-            if (self.currentDay === "Saturday" || self.currentDay === "Sunday") {
-                alert("there are no deliveries today!");
-            }
-            if (day === self.currentDay ) {
+            if (day === self.currentDay) {
                 self.deliveriesPerDay = allDeliveries[i].deliveries;
             }
-            if(day === allDeliveries[i].day) {
+            if (day === allDeliveries[i].day) {
                 self.deliveriesPerDay = allDeliveries[i].deliveries;
             }
         }
     }
+
 }]);

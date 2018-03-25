@@ -32,8 +32,13 @@
 
         <h1 class="deliveryHeader">Delivery Schedule</h1>
 
+        <!-- Displays this message when either Saturday or Sunday -->
+        <h1 class="noDeliveries" ng-if="vm.currentDay === 'Sunday' || vm.currentDay === 'Saturday'">
+            Oops! We do not delivery on weekends. Please check back with us on Monday!
+        </h1>
+
         <!-- ng-repeat through allDeliveries array to get buttons for each day -->
-        <section class="dayContainer">
+        <section class="dayContainer" ng-hide="vm.currentDay === 'Sunday' || vm.currentDay === 'Saturday'">
             <div ng-repeat="days in vm.allDeliveries">
                 <md-button class="md-raised dayBtn" ng-click="vm.deliverySchedule(days.day, vm.allDeliveries)">
                     {{days.day}}
@@ -42,9 +47,10 @@
         </section>
 
         <!-- ng-repeat through deliveriesPerDay to get the restaurants and their information -->
-        <section class="restaurantContainer">
+        <section class="restaurantContainer" ng-hide="vm.currentDay === 'Sunday' || vm.currentDay === 'Saturday'">
+            
             <!-- card to hold each restaurants information -->
-            <md-card ng-repeat="info in vm.deliveriesPerDay" class="card">
+            <md-card ng-repeat="info in vm.deliveriesPerDay" class="card" ng-hide="info.day === 'Saturday' || info.day === 'Sunday'">
                 <md-card-title>
                     <md-card-title-text>
                         <span class="md-headline">{{info.restaurantName}}</span>

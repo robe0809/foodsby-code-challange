@@ -45,3 +45,6 @@ html {
 .card {
     border-bottom: 3px solid red;
 }
+.noDeliveries {
+    text-align: center;
+}

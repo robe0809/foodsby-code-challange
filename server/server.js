@@ -12,7 +12,7 @@ app.use(bodyParser.json()); // needed for angular requests
 /** ---------- EXPRESS ROUTES ---------- **/
 
 app.get('/delivery', (req, res) => {
-    // sends deliveries to client.js
+    // sends deliveries to client.js    
     res.send(deliveryInfo.deliveries);
 });
 

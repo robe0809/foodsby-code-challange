@@ -120,7 +120,7 @@
           "sellingOut": false,
           "isPastCutoff": false,
           "isOrderPlaced": false
-      }
+        }
       ]
     },
     {
@@ -226,6 +226,14 @@
           "sellingOut": false,
           "isPastCutoff": true,
           "isOrderPlaced": false
+        },
+        {
+          "day": "Saturday",
+          "deliveries": []
+        },
+        {
+          "day": "Sunday",
+          "deliveries": []
         }
       ]
     }
