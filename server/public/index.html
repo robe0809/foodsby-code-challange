@@ -40,7 +40,7 @@
         <!-- ng-repeat through allDeliveries array to get buttons for each day -->
         <section class="dayContainer" ng-hide="vm.currentDay === 'Sunday' || vm.currentDay === 'Saturday'">
             <div ng-repeat="days in vm.allDeliveries">
-                <md-button class="md-raised"  ng-class="days.day === vm.currentDay," ng-click="vm.deliverySchedule(days.day, vm.allDeliveries)">
+                <md-button class="md-raised" ng-click="vm.deliverySchedule(days.day, vm.allDeliveries)">
                     {{days.day}}
                 </md-button>
             </div>
