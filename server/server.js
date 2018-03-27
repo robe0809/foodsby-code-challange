@@ -11,6 +11,7 @@ app.use(bodyParser.json()); // needed for angular requests
 
 /** ---------- EXPRESS ROUTES ---------- **/
 
+// gets delivery info from JSON module
 app.get('/delivery', (req, res) => {
     // sends deliveries to client.js    
     res.send(deliveryInfo.deliveries);
