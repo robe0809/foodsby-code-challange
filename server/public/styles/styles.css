@@ -20,8 +20,12 @@ html {
     display: flex;
     justify-content: center;
 }
-.md-button:focus {
+
+.dayBtn {
     color: red;
+    text-decoration: underline;
+}
+.newDayBtn:focus {
     text-decoration: underline;
 }
 /******** Restaurant Styles ********/

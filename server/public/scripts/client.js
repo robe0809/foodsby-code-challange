@@ -8,9 +8,9 @@ myApp.controller("DeliveryController", ['$http', function ($http) {
     self.allDeliveries;
     self.deliveriesPerDay;
 
-    // getting current day in order to enter page and display the current days orders. 
+    // getting current day to display that days orders upon page load
     self.date = new Date();
-    
+
     self.weekday = new Array(7);
     self.weekday[0] = "Sunday";
     self.weekday[1] = "Monday";
@@ -28,17 +28,16 @@ myApp.controller("DeliveryController", ['$http', function ($http) {
             .then((response) => {
                 console.log('get response', response.data);
                 self.allDeliveries = response.data;
-                self.getCurrentDay(self.currentDay, self.allDeliveries);  
+                self.getCurrentDay(self.currentDay, self.allDeliveries);
             })
             .catch((error) => {
                 console.log('error on get', error);
             })
     }
-
     self.getDeliveries();
 
     // loops through the Response from the JSON file which gives us access to days and delivery details. 
-    self.deliverySchedule = function (day, allDeliveries) {  
+    self.deliverySchedule = function (day, allDeliveries) {
         for (let i = 0; i < allDeliveries.length; i++) {
             if (day === allDeliveries[i].day) {
                 self.deliveriesPerDay = allDeliveries[i].deliveries;
@@ -47,6 +46,7 @@ myApp.controller("DeliveryController", ['$http', function ($http) {
         }
     }
 
+    // Getting todays delivery info. 
     self.getCurrentDay = function (day, allDeliveries) {
         for (let i = 0; i < allDeliveries.length; i++) {
             if (day === allDeliveries[i].day) {
