@@ -42,7 +42,6 @@ myApp.controller("DeliveryController", ['$http', function ($http) {
             if (day === allDeliveries[i].day) {
                 self.deliveriesPerDay = allDeliveries[i].deliveries;
                 console.log('per day', self.deliveriesPerDay);
-                
             }
         }
     }
