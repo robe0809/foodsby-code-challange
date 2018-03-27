@@ -1,4 +1,4 @@
-## Foodsby Code Challange
+## Foodsby Code Challenge
 
 
 ### Built With 
