@@ -32,16 +32,16 @@
 
         <h1 class="deliveryHeader">Delivery Schedule</h1>
 
-
-
         <!-- ng-repeat through allDeliveries array to get buttons for each day -->
         <section class="dayContainer">
             <div ng-repeat="days in vm.allDeliveries">
-                <md-button ng-class="{ 'dayBtn': vm.currentDay === days.day }" ng-if="vm.currentDay !== days.day" class="md-raised newDayBtn" ng-click="vm.deliverySchedule(days.day, vm.allDeliveries)">
+                <md-button ng-class="{ 'dayBtn': vm.currentDay === days.day }" ng-if="vm.currentDay !== days.day" class="md-raised newDayBtn"
+                    ng-click="vm.deliverySchedule(days.day, vm.allDeliveries)">
                     {{days.day}}
                 </md-button>
                 <!-- Show "Today's" menu options -->
-                <md-button ng-class="{ 'dayBtn': vm.currentDay === days.day }" ng-if="days.day === vm.currentDay" class="md-raised newDayBtn" ng-click="vm.deliverySchedule(days.day, vm.allDeliveries)">
+                <md-button ng-class="{ 'dayBtn': vm.currentDay === days.day }" ng-if="days.day === vm.currentDay" class="md-raised newDayBtn"
+                    ng-click="vm.deliverySchedule(days.day, vm.allDeliveries)">
                     Today
                 </md-button>
             </div>
@@ -49,21 +49,28 @@
 
         <!-- Displays this message when current day is Saturday or Sunday -->
         <h1 class="noDeliveries" ng-if="vm.currentDay === 'Sunday' || vm.currentDay === 'Saturday'">
-            We do not delivery on weekends. Feel free to browse our weekday menu. If you 
-            would like to order, please check back with us on Monday!
+            We do not delivery on weekends. Feel free to browse our weekday menu. If you would like to order, please check back with
+            us on Monday!
         </h1>
 
         <!-- ng-repeat through deliveriesPerDay to get the restaurants and their information -->
         <section class="restaurantContainer">
+
             <!-- card to hold each restaurants information -->
             <md-card ng-repeat="info in vm.deliveriesPerDay" class="card" ng-hide="info.day === 'Saturday' || info.day === 'Sunday'">
+
+                <!-- Title of the card -->
                 <md-card-title>
                     <md-card-title-text>
                         <span class="md-headline">{{info.restaurantName}}</span>
                     </md-card-title-text>
                 </md-card-title>
+
+                <!-- info inside of the card -->
                 <md-card-content layout="row" layout-align="space-between">
                     <img class="md-media-xl card-media" ng-src="{{info.logoUrl}}">
+
+                    <!-- Cards Actions/Buttons -->
                     <md-card-actions layout="column" layout-align="space-between center" class="orderInfo">
                         <div class="md-icon-button" ng-hide="info.soldOut===true">
                             <p class="orderTimes" layout="row" layout-align="space-between">
@@ -81,7 +88,9 @@
                             <p>which is established to ensure quality.</p>
                         </div>
                     </md-card-actions>
+
                 </md-card-content>
+
             </md-card>
 
         </section>

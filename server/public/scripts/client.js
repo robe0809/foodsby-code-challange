@@ -20,8 +20,7 @@ myApp.controller("DeliveryController", ['$http', function ($http) {
     self.weekday[5] = "Friday";
     self.weekday[6] = "Saturday";
 
-    // self.currentDay = self.weekday[self.date.getDay()];
-    self.currentDay = "Tuesday";
+    self.currentDay = self.weekday[self.date.getDay()];
 
     // gets delivery info from Server. 
     self.getDeliveries = function () {
