@@ -20,7 +20,8 @@ myApp.controller("DeliveryController", ['$http', function ($http) {
     self.weekday[5] = "Friday";
     self.weekday[6] = "Saturday";
 
-    self.currentDay = self.weekday[self.date.getDay()];
+    // self.currentDay = self.weekday[self.date.getDay()];
+    self.currentDay = "Tuesday";
 
     // gets delivery info from Server. 
     self.getDeliveries = function () {
@@ -37,7 +38,7 @@ myApp.controller("DeliveryController", ['$http', function ($http) {
     self.getDeliveries();
 
     // loops through the Response from the JSON file which gives us access to days and delivery details. 
-    self.deliverySchedule = function (day, allDeliveries) {
+    self.deliverySchedule = function (day, allDeliveries) { 
         for (let i = 0; i < allDeliveries.length; i++) {
             if (day === allDeliveries[i].day) {
                 self.deliveriesPerDay = allDeliveries[i].deliveries;
