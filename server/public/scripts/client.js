@@ -21,7 +21,7 @@ myApp.controller("DeliveryController", ['$http', function ($http) {
     self.weekday[6] = "Saturday";
 
     self.currentDay = self.weekday[self.date.getDay()];
-
+    
     // gets delivery info from Server. 
     self.getDeliveries = function () {
         $http.get('/delivery')

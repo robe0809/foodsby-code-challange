@@ -21,11 +21,7 @@ html {
     justify-content: center;
 }
 
-.dayBtn {
-    color: red;
-    text-decoration: underline;
-}
-.newDayBtn:focus {
+.newDayBtn:focus , .dayBtn  {
     text-decoration: underline;
 }
 /******** Restaurant Styles ********/
